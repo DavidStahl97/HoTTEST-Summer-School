@@ -28,7 +28,7 @@ data ℕ : Type where
 ## Elimination principle
 
 The elimination principle for all type formers follow the same pattern: they tell us how to define dependent functions *out* of the given type. In the case of natural numbers, the eliminator gives [primitive recursion](https://encyclopediaofmath.org/wiki/Primitive_recursion). Given a base case `a : A 0` and a step function `f : (k : ℕ) → A k → A (suc k)`, we get a function `h : (n : ℕ) → A n` defined by primitive recursion as follows:
-```agda
+```
 ℕ-elim : {A : ℕ → Type}
        → A 0
        → ((k : ℕ) → A k → A (suc k))
